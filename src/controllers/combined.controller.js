@@ -5,7 +5,7 @@ exports.getCombinedData = async (req, res) => {
     const { month, search, page = 1, perPage = 5 } = req.query;
     console.log("query",req.query);
     console.log("page",page);
-    const baseUrl = `http://localhost:3000/api`;
+    const baseUrl = `https://roxilerdashboard-backend.onrender.com/api`;
 
     const [statistics, barChartData, pieChartData] = await Promise.all([
       axios.get(`${baseUrl}/statistics?month=${month}`),
